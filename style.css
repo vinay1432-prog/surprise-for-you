@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background: black;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+#welcomeScreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #d1d5db;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+#beginBtn {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size:
+        100px 100px,
+        150px 150px,
+        200px 200px;
+
+    animation: moveStars 40s linear infinite;
+    opacity: 0.7;
+}
+
+.fade-in {
+    animation: fadeText 1.5s ease;
+}
+
+#infinityScreen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.infinity-symbol {
+    font-size: 8rem;
+    color: #ff4081;
+    animation: glow 2s infinite alternate;
+}
+
+.friendship-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    max-width: 700px;
+}
+
+#collegeScreen,
+#reunionScreen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.memory-photo {
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+.story-title {
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.story-text {
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+#nextBtn,
+#continueBtn {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .infinity-symbol {
+        font-size: 5rem;
+    }
+
+    .friendship-text {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+}
+
+@keyframes moveStars {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-300px);
+    }
+}
+
+@keyframes fadeText {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 10px #ff4081,
+            0 0 20px #ff4081;
+    }
+
+    to {
+        text-shadow:
+            0 0 30px #ff4081,
+            0 0 60px #ff4081;
+    }
+}
+
+#birthdayScreen{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    height:100vh;
+    padding:20px;
+}
+
+.birthday-title{
+    font-size:2.5rem;
+    color:#ff4081;
+    margin-bottom:30px;
+    animation:fadeText 2s ease;
+}
+
+#birthdayMessage{
+    max-width:700px;
+    line-height:1.8;
+    font-size:1.1rem;
+    margin-bottom:40px;
+    min-height:220px;
+}
+
+.final-infinity{
+    font-size:6rem;
+    color:#ff4081;
+    animation:glow 2s infinite alternate;
+    display:none;
+}
+
+.final-text{
+    font-size:1.5rem;
+    margin-top:10px;
+    display:none;
+}
+
+@media screen and (max-width:768px){
+
+    .birthday-title{
+        font-size:2rem;
+    }
+
+    #birthdayMessage{
+        font-size:1rem;
+    }
+
+    .final-infinity{
+        font-size:4rem;
+    }
+}
+
+.birthday-title{
+    font-size:2.5rem;
+    color:#ff4081;
+    margin-bottom:30px;
+    animation:
+        fadeText 2s ease,
+        birthdayGlow 2s infinite alternate;
+}
+
+@keyframes birthdayGlow{
+
+    from{
+
+        text-shadow:
+            0 0 10px #ff4081,
+            0 0 20px #ff4081;
+
+    }
+
+    to{
+
+        text-shadow:
+            0 0 30px #ff4081,
+            0 0 60px #ff4081,
+            0 0 100px #ff4081;
+
+    }
+
+}
+
+.final-infinity{
+
+    font-size:6rem;
+    color:#ff4081;
+
+    animation:
+        glow 2s infinite alternate,
+        pulseInfinity 1.5s infinite;
+
+    display:none;
+}
+
+@keyframes pulseInfinity{
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
